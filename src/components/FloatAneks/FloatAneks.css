@@ -1,0 +1,32 @@
+:root {
+    --color1: rgb(0, 255, 247);
+    --color2: rgb(141, 135, 255);
+    --color3: rgb(128, 0, 255);
+}
+
+#aneks {
+    color: var(--color2);
+    font-family: 'Tilt Warp', cursive;
+    font-size: 80px;
+    text-shadow: 0px 0px 10px var(--color2);
+    animation: floatShadow 5s infinite;
+    cursor: default;
+}
+
+@keyframes floatShadow {
+    0%, 90% {
+        color: var(--color2);
+        text-shadow: 0px 0px 10px var(--color2);
+    }
+    15% {
+        color: transparent;
+    }
+    45% {
+        text-shadow:    25px 0px 15px var(--color1),
+                        -25px 0px 15px var(--color3);
+        color: transparent;
+    }
+    70% {
+        color: transparent;
+    }
+}

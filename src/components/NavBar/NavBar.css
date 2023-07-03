@@ -1,0 +1,72 @@
+#navBar {
+    position: fixed;
+    height: 100vh;
+    width: 5.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+    padding: 10px;
+    padding-top: 5rem;
+    padding-bottom: 6rem;
+    transition: transform 1s;
+}
+
+#logo {
+    border-radius: 15px;
+    padding: 5px;
+}
+
+#navMenu {
+    border-top: 1px solid rgba(133, 133, 133, 0.371);
+}
+
+.menuBtn {
+    border-bottom: 1px solid rgba(133, 133, 133, 0.371);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: var(--grey);
+}
+
+.menuBtn:hover {
+    color: var(--cyan);
+    transition: color 375ms;
+}
+
+.socialBtn {
+    padding: 18px;
+    padding-top: 5px;
+}
+
+.socialBtn svg path {
+    fill: rgb(75, 75, 75)
+}
+
+.socialBtn:hover {
+    transform: translateY(-10px);
+    transition: transform 350ms;
+}
+
+.socialBtn:hover > svg path {
+    fill: var(--cyan);
+    transition: fill 350ms;
+    animation: socials 0.35s forwards;
+}
+
+#hideBtn {
+    position: fixed;
+    margin-left: 5.5rem;
+    height: 4rem;
+    width: 1.3rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+    transition: transform 1s;
+}
+
+#hideText {
+    writing-mode: vertical-rl;
+    color: var(--cyan);
+    font-family: 'Source Code Pro', monospace;
+}

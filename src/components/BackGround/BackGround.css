@@ -1,0 +1,27 @@
+.square {
+    position: fixed;
+    width: 25px;
+    height: 25px;
+    border: 4px solid rgba(255, 255, 255, 0.044);
+    border-radius: 5px;
+}
+
+.square:hover {
+    border: 4px solid var(--cyan);
+    transition: border 500ms;
+}
+
+@keyframes fall {
+    0% { top: -30px; }
+    100% { top: calc(100vh + 50px); }
+}
+
+@keyframes rotate1 {
+    0% { transform: rotateZ(0deg); }
+    100% { transform: rotateZ(900deg); }
+}
+
+@keyframes rotate2 {
+    0% { transform: rotateZ(0deg); }
+    100% { transform: rotateZ(-900deg); }
+}

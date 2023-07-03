@@ -1,0 +1,17 @@
+#homeContainer {
+    width: 100vw;
+    height: 100vh;
+}
+
+#homeDescription {
+    color: var(--grey);
+    font-size: 22px;
+    width: 40vw;
+    height: fit-content;
+    text-align: justify;
+}
+
+#homeTitle {
+    width: 40vw;
+    justify-content: flex-start;
+}

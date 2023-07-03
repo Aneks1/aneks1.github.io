@@ -1,0 +1,22 @@
+.char {
+    color: rgb(220, 234, 252);
+    text-shadow: 5px 5px rgb(60, 73, 71);
+    font-family: 'Tilt Warp', cursive;
+    font-size: 80px;
+    cursor: default;
+    z-index: 1;
+}
+
+.char:hover {
+    animation: charBounce 500ms;
+    transition: color 500ms, 
+                text-shadow 500ms;
+    color: var(--cyan);
+    text-shadow: 5px 5px rgb(0, 98, 88);
+}
+
+@keyframes charBounce {
+    0%, 100% { transform: scale(1,1) translateY(0); }
+    25% { transform: scale(1.1, 0.8) translateY(5px); }
+    75% { transform: scale(0.9, 1.1) translateY(-2px); }
+}
