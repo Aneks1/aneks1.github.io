@@ -1,6 +1,6 @@
 <template>
     <div id="about" class="about-container">
-        <div class="about-card">
+        <div class="about-card" id="about-card">
             <canvas id="canvas"></canvas>
             <div class="about-content">
                 <div class="about-content-inner">
@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
 import cssParticles from 'css-particles'
 
 export default defineComponent({
@@ -40,10 +40,15 @@ export default defineComponent({
     mounted() {
         this.moveImage()
 
-        const canvas = document.getElementById('canvas')
-        const system = new cssParticles.ParticleSystem(canvas as HTMLCanvasElement, { x: 2000, y: 1000 })
+        const card = document.getElementById('about-card') as HTMLElement
+        const canvas = document.getElementById('canvas') as HTMLCanvasElement
+
+        canvas.height = card.clientHeight
+        canvas.width = card.clientWidth
+
+        const system = new cssParticles.ParticleSystem(canvas, { x: canvas.width, y: canvas.height })
         console.log(system)
-        system.ammount = 50
+        system.ammount = 100
         system.speed = { x: { min: -5, max: 5 }, y: { min: -5, max: 5 } }
         system.diameter = { min: 1, max: 3 },
         system.life = { min: 5, max: 15 }

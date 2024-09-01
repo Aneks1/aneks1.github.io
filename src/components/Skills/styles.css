@@ -1,0 +1,62 @@
+.skills-container {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 5rem 0rem;
+    gap: 2.5rem;
+}
+
+.skills-container .title {
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.35);
+}
+
+.skills-container .scroller-wrapper {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    gap: 2.5rem;
+}
+
+.skills-container .scroller-wrapper:hover .scroller {
+    animation-play-state: paused;
+}
+
+.skills-container .scroller-wrapper .scroller {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    animation: scroll 50s linear infinite;
+    animation-play-state: running;
+}
+
+.skills-container .scroller-wrapper .scroller .scroller-card {
+    height: fit-content;
+    width: fit-content;
+}
+
+.skills-container .scroller-wrapper .scroller .scroller-card img {
+    height: 5rem;
+    filter: grayscale(1) opacity(0.25);
+}
+
+.skills-container .scroller-wrapper .scroller .scroller-card img:hover {
+    transition: filter 250ms;
+    filter: none;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0px); }
+    to { transform: translateX(-100%) }
+}

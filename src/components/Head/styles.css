@@ -13,6 +13,7 @@
     justify-content: center;
     align-items: flex-start;
     gap: 1rem;
+    animation: fade-in-up 2s forwards;
 }
 .head-container .title {
     color: white;

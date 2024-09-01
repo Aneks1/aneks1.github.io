@@ -15,7 +15,7 @@
                 <br>
             </div>
             <span class="subtitle">
-                Self-proclaimed developer
+                Self-proclaimed full-stack developer
             </span>
         </div>
         <a class="arrow" href="#about">
