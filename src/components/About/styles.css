@@ -1,0 +1,113 @@
+.about-container {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 0px;
+}
+.about-card {
+    width: 100%;
+    height: 45rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-image: linear-gradient(to right, var(--primary), var(--secondary)) 1;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    box-shadow: 0px 0px 30px 25px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+.about-card canvas {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+}
+.about-content {
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.about-content-inner {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 5rem;
+}
+.about-content-inner img {
+    height: min(100%, calc(50vw - 10rem));
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.5);
+}
+.about-text-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+}
+.about-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    cursor: none;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.35);
+    animation: about-title 5s infinite ease;
+}
+.about-text {
+    font-size: 1.25rem;
+    line-height: calc(100% + 0.5rem);
+    animation: about-title 5s infinite ease;
+    animation-delay: 2s;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+.about-title:hover {
+    animation:  change-color 2s infinite,
+                about-title 5s infinite ease;
+}
+
+@keyframes about-title {
+    0%, 100% { transform: translateY(-10px); }
+    50% { transform: translateY(10px); }
+}
+
+@keyframes change-color {
+    0%, 100% {
+        color: var(--primary);
+        text-shadow: 0px 0px 10px var(--primary); 
+    }
+    50% {
+        color: var(--secondary);
+        text-shadow: 0px 0px 10px var(--secondary);
+    }
+}
+
+@media (max-width: calc(100vh + 10rem)) {
+    .about-content {
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    .about-content-inner {
+        height: fit-content;
+        width: 100%;
+        padding: 2rem 5rem;
+    }
+    .about-card {
+        height: 100rem;
+    }
+    .about-content-inner img {
+        width: 100%;
+        height: auto;
+    }
+}

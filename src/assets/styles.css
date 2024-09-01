@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --bg-base: rgb(15, 15, 15);
+    --primary: rgb(102, 0, 255);
+    --secondary: rgb(0, 255, 255);
+    --primary-gradient: rgba(102, 0, 255, 0.05);
+    --secondary-gradient: rgba(0, 255, 255, 0.05);
+    --font-inter: "Inter", system-ui;
+    font-family: var(--font-inter);
+    background-color: var(--bg-base);
+    scroll-behavior: smooth;
+    color: white;
+}
+::-webkit-scrollbar {
+    background: none;
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10rem;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+body {
+    margin: 0px;
+    height: fit-content;
+    position: relative;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+body::before,
+body::after {
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -2;
+}
+
+body::before {
+    background-image: url("./noise.png");
+    opacity: 0.025;
+}
+
+body::after {
+    background-image: linear-gradient(to bottom right, var(--primary-gradient), var(--secondary-gradient));
+    z-index: -1;
+}
+#cursor {
+    position: fixed;
+    width: 7px;
+    height: 7px;
+    border-radius: 4px;
+    z-index: 999;
+    animation: cursor 5s infinite;
+    pointer-events: none;
+}
+@keyframes cursor {
+    0%, 100% {
+        background: var(--primary);
+        box-shadow: 0px 0px 10px var(--primary); 
+    }
+    50% {
+        background: var(--secondary);
+        box-shadow: 0px 0px 10px var(--secondary);
+    }
+}
+
+@media (max-width: 700px) {
+    #cursor {
+        display: none;
+    }
+}

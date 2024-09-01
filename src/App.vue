@@ -1,27 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <div id="cursor"></div>
+    <navbar-component-vue/>
+    <head-component-vue/>
+    <about-component-vue/>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent } from 'vue'
+import AboutComponentVue from './components/About/AboutComponent.vue'
+import HeadComponentVue from './components/Head/HeadComponent.vue'
+import NavbarComponentVue from './components/Navbar/NavbarComponent.vue'
 
-@Options({
-  components: {
-    HelloWorld,
-  },
+export default defineComponent({
+    components: { NavbarComponentVue, HeadComponentVue, AboutComponentVue },
+    mounted() {
+        document.addEventListener('mousemove', (ev: MouseEvent) => {
+            const cursor = document.getElementById('cursor')
+            cursor!.style.top = `${ev.clientY}px`
+            cursor!.style.left = `${ev.clientX}px`
+        })
+    }
 })
-export default class App extends Vue {}
 </script>
 
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url("./assets/styles.css");
 </style>
