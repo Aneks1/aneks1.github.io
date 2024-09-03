@@ -50,7 +50,7 @@ export default defineComponent({
         console.log(system)
         system.ammount = 100
         system.speed = { x: { min: -5, max: 5 }, y: { min: -5, max: 5 } }
-        system.diameter = { min: 1, max: 3 },
+        system.diameter = { min: 1, max: 4 },
         system.life = { min: 5, max: 15 }
         system.init()
     }

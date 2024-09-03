@@ -50,7 +50,7 @@
                 <div class="scroller-card">
                     <img src="../../assets/tailwind.svg">
                 </div>
-            </div>
+            </div>            
             <div class="scroller">
                 <div class="scroller-card">
                     <img src="../../assets/html.svg">

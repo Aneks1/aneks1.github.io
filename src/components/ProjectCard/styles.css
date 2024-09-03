@@ -10,16 +10,79 @@
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        800px circle at var(--x) var(--y),
+        rgba(255, 255, 255, 0.15),
+        transparent 50%
+    );
+    z-index: -1;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+.card:hover::before {
+    opacity: 1;
+    transition: opacity 200ms;
 }
 
 .card .title {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
+    pointer-events: none;
+    position: relative;
 }
+
+.card .title::before,
+.card .title::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    top: 100%;
+    left: 0px;
+    opacity: 0;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.card .title::after {
+    filter: blur(5px);
+}
+
+.card:hover .title::before,
+.card:hover .title::after {
+    transition: opacity 200ms;
+    opacity: 1;
+}
+
 
 .card img {
     width: 100%;
     border-radius: 10px;
+    pointer-events: none;
+}
+
+.card .links a img {
+    filter: opacity(0.25);
+}
+
+.card .links a:hover img {
+    transition: filter 250ms;
+    filter: opacity(1) drop-shadow(0px 0px 15px white);
 }
 
 .card .links {

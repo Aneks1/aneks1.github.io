@@ -3,7 +3,8 @@ export default [
         name: 'Css Particles',
         github: 'https://github.com/Aneks1/canvas-particles',
         website: 'https://aneks1.github.io/canvas-particles/',
-        image: '/css-particles.png'
+        image: '/css-particles.png',
+        npm: 'https://www.npmjs.com/package/css-particles?activeTab=readme'
     },
     {
         name: 'Orbital Visualizer',

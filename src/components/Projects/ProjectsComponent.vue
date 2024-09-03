@@ -1,19 +1,18 @@
 <template>
-    <div class="projects-container">
-        <div class="projects-card">
-            <div class="projects-title">
-                Featured Projects
-            </div>
-            <div class="projects-grid">
-                <project-card-vue 
-                    v-for="(i, j) in projects" 
-                    :key="j"
-                    :name="i.name"
-                    :github="i.github"
-                    :website="i.website"
-                    :image="i.image"
-                />
-            </div>
+    <div id="projects" class="projects-container">
+        <div class="projects-title">
+            Projects
+        </div>
+        <div class="projects-grid">
+            <project-card-vue 
+                v-for="(i, j) in projects" 
+                :key="j"
+                :name="i.name"
+                :github="i.github"
+                :website="i.website"
+                :image="i.image"
+                :npm="i.npm"
+            />
         </div>
     </div>
 </template>

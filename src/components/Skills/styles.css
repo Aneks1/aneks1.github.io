@@ -14,6 +14,29 @@
     font-size: 3rem;
     font-weight: 600;
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.35);
+    position: relative;
+}
+
+.skills-container .title::before, 
+.skills-container .title::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    border-radius: 3px;
+    top: 50%;
+}
+
+.skills-container .title::before {
+    background-color: var(--primary);
+    left: calc(-100% - 1rem);
+    box-shadow: 0px 0px 10px var(--primary);
+}
+
+.skills-container .title::after {
+    background-color: var(--secondary);
+    left: calc(100% + 1rem);
+    box-shadow: 0px 0px 10px var(--secondary);
 }
 
 .skills-container .scroller-wrapper {
