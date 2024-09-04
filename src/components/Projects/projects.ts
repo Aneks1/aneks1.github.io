@@ -21,5 +21,11 @@ export default [
         name: 'NoteSphere',
         github: 'https://github.com/Aneksium/NoteSphere',
         image: '/notesphere.png'
+    },
+    {
+        name: 'Image to ASCII',
+        github: 'https://github.com/Aneks1/image-to-ascii',
+        website: 'https://aneks1.github.io/image-to-ascii/',
+        image: '/image-ascii.png'
     }
 ]
