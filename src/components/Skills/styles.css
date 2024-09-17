@@ -11,10 +11,11 @@
 }
 
 .skills-container .title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 600;
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.35);
     position: relative;
+    text-align: center;
 }
 
 .skills-container .title::before, 
@@ -25,6 +26,13 @@
     position: absolute;
     border-radius: 3px;
     top: 50%;
+}
+
+@media (max-width: 500px) {
+    .skills-container .title::before, 
+    .skills-container .title::after {
+        display: none;
+    }
 }
 
 .skills-container .title::before {

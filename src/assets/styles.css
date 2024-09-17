@@ -71,7 +71,13 @@ body::after {
     }
 }
 
-@media (max-width: 100vh) {
+@media (pointer: coarse) {
+    #cursor {
+        display: none;
+    }
+}
+
+@media (pointer: none) {
     #cursor {
         display: none;
     }

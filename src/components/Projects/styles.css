@@ -22,10 +22,11 @@
 }
 
 .projects-title {
-    font-size: 3rem;
+    font-size: clamp(2rem, 5vw, 3rem);
     text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.25);
     font-weight: 700;
     position: relative;
+    text-align: center;
 }
 
 .projects-title::before, 
@@ -36,6 +37,13 @@
     position: absolute;
     border-radius: 3px;
     top: 50%;
+}
+
+@media (max-width: 500px) {
+    .projects-title::before, 
+    .projects-title::after {
+        display: none;
+    }
 }
 
 .projects-title::before {
