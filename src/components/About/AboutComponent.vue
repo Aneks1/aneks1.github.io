@@ -11,6 +11,14 @@
                         <p class="about-text">
                             I am Gonzalo, better known in internet as Aneks! I am a 16 year old self-taught peruvian developer, who is skilled both in front-end and back-end development. I started coding in 2020 making Roblox games. In 2021 I moved on to JavaScript when I started making Discord bots. Since then, I have been polishing my abilities in TypeScript and in web development, being Vue my main (and favorite) framework. <br><br>I am also a physics and mathemathics enthusiast. When I am not coding, I spend my time being a passionate baseketball player, surfer and guitarist. I also have my own small Enterprise, where I develop many startups with the hope to get recognition.
                         </p>
+                        <button class="like">
+                            <span>
+                                👍
+                            </span>
+                            <span>
+                                {{ count }}
+                            </span>
+                        </button>
                     </div>
                 </div>
                 <div class="about-content-inner">
@@ -24,9 +32,15 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import cssParticles from 'css-particles'
+import axios from 'axios';
 
 export default defineComponent({
     name: 'AboutComponent',
+    data() {
+        return {
+            count: 0
+        }
+    },
     methods: {
         moveImage() {
             const height = document.body.clientHeight / 2
@@ -35,6 +49,11 @@ export default defineComponent({
                 const degrees = (height - e.clientY) * 5 / height
                 group.style.transform = `rotate(${degrees}deg)`
             })
+        },
+        async getCount() {
+            console.log('akhsd')
+            const data = await axios.get('https://api.countapi.xyz/get/aneksportfolio/likes')
+            console.log('akjshd0', data)
         }
     },
     mounted() {
@@ -53,6 +72,8 @@ export default defineComponent({
         system.diameter = { min: 1, max: 4 },
         system.life = { min: 5, max: 15 }
         system.init()
+
+        this.getCount()
     }
 })
 </script>

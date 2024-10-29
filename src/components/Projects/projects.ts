@@ -27,5 +27,10 @@ export default [
         github: 'https://github.com/Aneks1/image-to-ascii',
         website: 'https://aneks1.github.io/image-to-ascii/',
         image: '/image-ascii.png'
+    },
+    {
+        name: 'AI ASCII Terminal',
+        website: 'https://asciiterminal.com/',
+        image: '/asciiterminal.png'
     }
 ]
