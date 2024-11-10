@@ -1,6 +1,3 @@
-.pointer {
-    cursor: pointer;
-}
 nav {
     width: 100vw;
     height: 7rem;
@@ -25,6 +22,7 @@ nav .nav-content .logo {
 nav .nav-content .logo a,
 nav .nav-content .logo a img {
     height: 100%;
+    cursor: none
 }
 nav .nav-content .socials {
     height: 100%;
@@ -33,6 +31,10 @@ nav .nav-content .socials {
     justify-content: center;
     align-items: center;
     gap: 1.75rem;
+}
+
+nav .nav-content .socials a {
+    cursor: none
 }
 
 nav .nav-content .socials a:hover > img {

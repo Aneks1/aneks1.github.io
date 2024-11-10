@@ -5,7 +5,7 @@
         </div>
         <img :src="image">
         <div class="links">
-            <a :href="github" target="_blank">
+            <a v-if="github" :href="github" target="_blank">
                 <img src="../../assets/github-mini.svg" alt="">
             </a>
             <a v-if="npm" :href="npm" target="_blank">
@@ -25,7 +25,10 @@ export default defineComponent({
     name: 'ProjectCard',
     props: {
         name: String,
-        github: String,
+        github: {
+            type: String,
+            required: false
+        },
         website: {
             type: String,
             required: false

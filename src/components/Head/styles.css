@@ -56,7 +56,7 @@
     to { background-position-x: right; }
 }
 .subtitle {
-    color: white;
+    color: rgba(255, 255, 255, 0.5);
     font-weight: 700;
     font-size: 4rem;
     text-align: left;
@@ -69,8 +69,13 @@
     bottom: 3rem;
     background: none;
     border: none;
-    cursor: pointer;
+    cursor: none;
     animation: arrow infinite 2s;
+}
+.arrow:hover {
+    animation-play-state: paused;
+    scale: 1.2;
+    transition: scale 200ms ease-out;
 }
 @keyframes arrow {
     0% {

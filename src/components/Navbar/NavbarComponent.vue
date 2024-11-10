@@ -2,7 +2,7 @@
     <nav>
         <div class="nav-content">
             <div class="logo">
-                <a class="pointer" href="/">
+                <a href="/">
                     <img src="../../assets/logo.png" alt="Aneks">
                 </a>
             </div>
